@@ -2,3 +2,32 @@
   max-width: 1420px;
   margin: 0 auto;
 }
+
+div#popular p.popular-recipe-card-name {
+  font-size: 1.2rem;
+  top: 80%;
+}
+
+div#veggie p.veggie-recipe-card-name {
+  font-size: 0.75rem;
+  top: 70%;
+}
+
+@media screen and (min-width: 769px) {
+  div#popular p.popular-recipe-card-name {
+    font-size: 0.8rem;
+    top: 65%;
+  }
+  div#veggie p.veggie-recipe-card-name {
+    font-size: 0.8rem;
+    top: 65%;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  div#popular p.popular-recipe-card-name,
+  div#veggie p.veggie-recipe-card-name {
+    font-size: 1rem;
+    top: 70%;
+  }
+}

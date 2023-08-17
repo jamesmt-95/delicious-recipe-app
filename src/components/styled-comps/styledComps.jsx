@@ -28,9 +28,7 @@ const Card = styled.div`
     width: 100%;
     color: white;
     text-align: center;
-    top: 70%;
     z-index: 1;
-    font-size: 1rem;
   }
 `;
 
