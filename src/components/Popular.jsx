@@ -2,7 +2,7 @@ import PropTypes from 'prop-types'
 //styled components
 // import styled from "styled-components";
 //make a separate file for stled components
-import { Wrapper, Card, Gradient } from "./styled-comps/styledComps";
+import { Wrapper, Card, Gradient } from "./styled-components/styledComps";
 //react-splide
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import '@splidejs/react-splide/css/skyblue';
@@ -12,6 +12,7 @@ const Popular = ({ popular }) => {
     arrows: false,
     pagination: false,
     perPage: 4,
+
     drag: "free",
     gap: "1.5rem",
     breakpoints: {
