@@ -3,6 +3,7 @@
 // import viteLogo from '/vite.svg'
 import Pages from './pages/Pages'
 import Category from './components/Category'
+import Search from './components/Search'
 import { BrowserRouter } from 'react-router-dom'
 
 
@@ -16,6 +17,7 @@ function App() {
     //instead of multiple <BrowserRouter> at Pages.jsx & Category.jsx, we can wrap them with <BrowserRouter> here
     <BrowserRouter>
       <div className='app'>
+        <Search />
         <Category />
         <Pages />
       </div>

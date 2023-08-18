@@ -3,11 +3,12 @@ import styled from "styled-components";
 //Components for Popular.jsx & Veggie.jsx
 
 const Wrapper = styled.section`
-  margin: 2.5rem 0rem;
+  margin: 1.5rem 0rem;
   padding: 0 1rem;
   h3 {
     font-family: "Poppins", sans-serif;
     font-weight: 400;
+    margin: 1rem 0rem 0.4rem 0rem;
   }
 `;
 
@@ -46,8 +47,42 @@ const Gradient = styled.div`
 const List = styled.div`
   display: flex;
   justify-content: center;
-  padding: 1rem;
-  margin: 2rem 0rem;
+  margin: 1.5rem 0rem;
+  padding: 0.2rem;
+  //List is to wrap the icons, and following a to style each
+  a {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    text-decoration: none;
+    background: linear-gradient(35deg, #494949, #313131);
+    width: 6rem;
+    height: 6rem;
+    cursor: pointer;
+    transform: scale(0.8);
+    transition: 0.2s all;
+    &.active {
+      background: linear-gradient(to right, #f27121, #e94057);
+      box-shadow: 0 3px 10px 0px rgba(0, 0, 0.5, 0.5);
+    }
+    &:hover {
+      box-shadow: 0 0 10px 0px rgba(0, 0, 0.5, 0.8);
+    }
+    @media screen and (min-width: 768px) {
+      margin: 0 0.7rem;
+    }
+    h4 {
+      color: #ffffff;
+      font-size: 0.8rem;
+    }
+    svg {
+      color: #ffffff;
+      font-size: 1.5rem;
+      margin-bottom: 0.3rem;
+    }
+  }
 `;
 
 //Components for Cuisine.jsx
@@ -73,6 +108,48 @@ const GridCard = styled.div`
   }
 `;
 
+//Components for Search.jsx
+
+const FormStyle = styled.form`
+  margin-top: 1.5rem;
+  div {
+    position: relative;
+    width: 70%;
+    text-align: center;
+    margin: 0 auto;
+    @media screen and (min-width: 768px) {
+      width: 40%;
+    }
+    input {
+      width: 100%;
+      border: none;
+      background: linear-gradient(35deg, #494949, #313131);
+      font-size: 1.2rem;
+      color: white;
+      padding: 0.6rem 3rem;
+      border-radius: 1rem;
+      outline: none;
+    }
+    svg.search-icon {
+      position: absolute;
+      top: 50%;
+      left: 0%;
+      transform: translate(100%, -50%);
+      color: #ffffff;
+    }
+    svg.close {
+      position: absolute;
+      top: 50%;
+      right: 3%;
+      transform: translate(-3%, -50%);
+      color: #ffffff;
+      cursor: pointer;
+      transition: 0.3s all;
+    }
+  }
+`;
+
 export { Wrapper, Card, Gradient };
 export { List };
 export { Grid, GridCard };
+export { FormStyle };

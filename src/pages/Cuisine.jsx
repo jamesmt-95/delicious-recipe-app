@@ -1,10 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion'
 import { Link, useParams } from 'react-router-dom';
 import { Grid, GridCard } from '../components/styled-components/styledComps';
 const Cuisine = () => {
-    const [cuisine, setCuisine] = useState([]);
     const params = useParams()
+    const [cuisine, setCuisine] = useState([]);
+
 
     useEffect(() => {
         getCuisine(params.type) //in route(Pages.jsx) it's mentioned :type
@@ -23,12 +24,12 @@ const Cuisine = () => {
 
     return (
         <Grid>
-           {cuisine.map((item)=>(
-            <GridCard key={item.id}>
-                <img src={item.image} alt={item.title} />
-                <h4>{item.title}</h4>
-            </GridCard>
-           ))}
+            {cuisine.map((item) => (
+                <GridCard key={item.id}>
+                    <img src={item.image} alt={item.title} />
+                    <h4>{item.title}</h4>
+                </GridCard>
+            ))}
         </Grid>
     )
 }
