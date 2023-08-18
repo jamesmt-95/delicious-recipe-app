@@ -12,7 +12,6 @@ const Popular = ({ popular }) => {
     arrows: false,
     pagination: false,
     perPage: 4,
-
     drag: "free",
     gap: "1.5rem",
     breakpoints: {

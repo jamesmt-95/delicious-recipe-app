@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 // sample recipes data
-// import data from '../components/sample-data/sampleRecipesData'
+// import data from '../sample-data/sampleRecipesData'
 import Popular from "../components/Popular"
 import Veggie from "../components/Veggie"
 import './Home.css'

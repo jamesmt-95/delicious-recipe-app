@@ -1,13 +1,13 @@
 import styled from "styled-components";
 
+//Components for Popular.jsx & Veggie.jsx
 
 const Wrapper = styled.section`
   margin: 2.5rem 0rem;
   padding: 0 1rem;
-  h3{
-  padding-bottom: 0.3rem;
-  font-family: "Poppins", sans-serif;
-  font-weight: 400;
+  h3 {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
   }
 `;
 
@@ -41,4 +41,38 @@ const Gradient = styled.div`
   background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5));
 `;
 
-export { Wrapper, Card, Gradient }
+//Components for Category.jsx
+
+const List = styled.div`
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+  margin: 2rem 0rem;
+`;
+
+//Components for Cuisine.jsx
+
+const Grid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  grid-gap: 3rem;
+  padding: 2rem;
+`;
+
+const GridCard = styled.div`
+  img {
+    width: 100%;
+    border-radius: 2rem;
+  }
+  a {
+    text-decoration: none;
+  }
+  h4 {
+    text-align: center;
+    padding: 1rem;
+  }
+`;
+
+export { Wrapper, Card, Gradient };
+export { List };
+export { Grid, GridCard };

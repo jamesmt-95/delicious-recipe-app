@@ -2,6 +2,10 @@
 // import reactLogo from './assets/react.svg'
 // import viteLogo from '/vite.svg'
 import Pages from './pages/Pages'
+import Category from './components/Category'
+import { BrowserRouter } from 'react-router-dom'
+
+
 import './App.css'
 
 
@@ -9,9 +13,14 @@ function App() {
   // const [count, setCount] = useState(0)
 
   return (
-    <>
-    <Pages/>
-    </>
+    //instead of multiple <BrowserRouter> at Pages.jsx & Category.jsx, we can wrap them with <BrowserRouter> here
+    <BrowserRouter>
+      <div className='app'>
+        <Category />
+        <Pages />
+      </div>
+    </BrowserRouter>
+
   )
 }
 
