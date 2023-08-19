@@ -18,7 +18,6 @@ const Veggie = ({ veggie }) => {
     arrows: false,
     pagination: false,
     drag: "free",
-    autoplay: 'play',
     gap: "1.5rem",
     breakpoints: {
       769: {
