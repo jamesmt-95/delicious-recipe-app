@@ -7,6 +7,9 @@ import { Wrapper, Card, Gradient } from "./styled-components/styledComps";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import '@splidejs/react-splide/css/skyblue';
 
+//Link from react-router-dom, to view description
+import { Link } from 'react-router-dom';
+
 const Popular = ({ popular }) => {
   const splideOptions = {
     arrows: false,
@@ -31,11 +34,13 @@ const Popular = ({ popular }) => {
             popular.map((recipe) => {
               return (
                 <SplideSlide key={recipe.id}>
+                  <Link to={`/recipe-details/${recipe.id}`}>
                   <Card>
                     <img src={recipe.image} alt={recipe.title} loading="lazy" />
                     <Gradient />
                     <p className='popular-recipe-card-name'>{recipe.title}</p>
                   </Card>
+                  </Link>
                 </SplideSlide>
               );
             })}

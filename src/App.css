@@ -9,6 +9,11 @@
   font-weight: 400; */
 }
 
+div.app {
+  max-width: 1420px;
+  margin: 0 auto;
+}
+
 h4 {
   font-size: 1rem;
   color: rgb(56, 56, 56);

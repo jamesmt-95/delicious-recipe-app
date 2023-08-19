@@ -149,7 +149,123 @@ const FormStyle = styled.form`
   }
 `;
 
+//Components for Error.jsx
+const ErrorCard = styled.div`
+  position: relative;
+  width: 50%;
+  background: #a4243b;
+  margin: 0 auto;
+  border-radius: 10px;
+  svg.error-close {
+    position: absolute;
+    top: 10%;
+    right: 1%;
+    transform: translate(-1%, -10%);
+    color: #ffffff;
+    cursor: pointer;
+    transition: 0.3s all;
+  }
+  p {
+    padding: 2rem;
+    color: white;
+    font-family: "Poppins", sans-serif;
+  }
+`;
+
+//Components for RecipeDetails.jsx
+
+const DetailsWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  .recipe-main {
+    width: 100%;
+    flex-shrink: 0;
+    img {
+      max-width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 0 5px 0px rgba(0, 0, 0.5, 0.6);
+    }
+    h2 {
+      font-size: 1.3rem;
+      margin-bottom: 1rem;
+    }
+  }
+  .recipe-summary{
+    padding: 2rem 0;
+    p{
+      line-height: 1.4rem;
+    }
+    h4{
+      font-weight: 600;
+      color: #000000;
+      text-decoration: underline;
+      padding-top: 0.8rem;
+      padding-bottom: 0.5rem;
+    }
+  }
+  ul {
+    margin-top: 0.5rem;
+    margin-left: 1rem;
+    li {
+      font-size: 1rem;
+      line-height: 2rem;
+    }
+  }
+  @media screen and (min-width: 768px) {
+    flex-direction: row;
+    .recipe-main {
+      width: 30%;
+    }
+    .recipe-summary{
+      p{
+        padding-right: 2rem;
+        margin-bottom: 1rem;
+      }
+      
+    }
+  }
+`;
+
+const Button = styled.button`
+  padding: 1rem 1.2rem;
+  color: #313131;
+  background: #ffffff;
+  border: 1.5px solid #000000;
+  border-radius: 4px;
+  margin: 0 2rem;
+  font-weight: 600;
+  cursor: pointer;
+  &.active {
+    background: linear-gradient(35deg, #494949, #313131);
+    color: #ffffff;
+  }
+  @media screen and (min-width: 768px) {
+    padding: 1rem 2rem;
+  }
+`;
+
+const Info = styled.div`
+  div.btns {
+    display: flex;
+    justify-content: center;
+    padding-top: 2rem;
+  }
+  @media screen and (min-width: 768px) {
+    padding-left: 4rem;
+    flex-grow: 1;
+    div.btns {
+      display: flex;
+      justify-content: flex-end;
+      padding-left: 5rem;
+      flex-grow: 1;
+    }
+  }
+`;
+
 export { Wrapper, Card, Gradient };
 export { List };
 export { Grid, GridCard };
 export { FormStyle };
+export { ErrorCard };
+export { DetailsWrapper, Button, Info };

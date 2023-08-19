@@ -1,7 +1,9 @@
 import PropTypes from 'prop-types'
+import Error from './Error';
 import { Grid, GridCard } from '../components/styled-components/styledComps';
 import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
+
 
 const SearchResult = () => {
     const params = useParams()
@@ -10,7 +12,7 @@ const SearchResult = () => {
 
     useEffect(() => {
         getSearchResults(params.query)
-    }, [])
+    }, [params])
 
     const getSearchResults = async (query) => {
         const res = await fetch(
@@ -23,16 +25,22 @@ const SearchResult = () => {
     }
 
     return (
-
-        <Grid>
-            {searchResult.map((item) => (
-                <GridCard key={item.id}>
-                    <img src={item.image} alt={item.title} />
-                    <h4>{item.title}</h4>
-                </GridCard>
-            ))}
-        </Grid>
-
+        <>
+            {searchResult ?
+                <Grid>
+                    {searchResult.map((item) => (
+                        <GridCard key={item.id}>
+                            <Link to={`/recipe-details/${item.id}`}>
+                            <img src={item.image} alt={item.title} />
+                            </Link>
+                            <h4>{item.title}</h4>
+                        </GridCard>
+                    ))}
+                </Grid>
+                :
+                <Error msg={'No Data Found'} />
+            }
+        </>
     )
 }
 

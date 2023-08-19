@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { FaSearch, FaTimesCircle } from 'react-icons/fa'
 import { FormStyle } from './styled-components/styledComps'
 import { useNavigate } from 'react-router-dom'

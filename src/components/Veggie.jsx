@@ -7,6 +7,10 @@ import { Wrapper, Card, Gradient } from "./styled-components/styledComps";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/react-splide/css";
 
+//Link from react-router-dom, to view description
+import { Link } from 'react-router-dom';
+
+
 const Veggie = ({ veggie }) => {
 
   const splideOptions = {
@@ -32,11 +36,13 @@ const Veggie = ({ veggie }) => {
           {veggie.map((recipe) => {
             return (
               <SplideSlide key={recipe.id}>
+                <Link to={`/recipe-details/${recipe.id}`}>
                 <Card>
                   <img src={recipe.image} alt={recipe.title} loading="lazy" />
                   <Gradient />
                   <p className='veggie-recipe-card-name'>{recipe.title}</p>
                 </Card>
+                </Link>
               </SplideSlide>
             );
           })}
