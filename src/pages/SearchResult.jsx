@@ -2,6 +2,7 @@ import Error from './Error';
 import { Grid, GridCard } from '../components/styled-components/styledComps';
 import { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
+import { motion } from 'framer-motion';
 
 
 const SearchResult = () => {
@@ -24,13 +25,17 @@ const SearchResult = () => {
     }
 
     return (
-        <>
+        <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.59 }}
+            exit={{ opacity: 0 }}>
             {searchResult ?
                 <Grid>
                     {searchResult.map((item) => (
                         <GridCard key={item.id}>
                             <Link to={`/recipe-details/${item.id}`}>
-                            <img src={item.image} alt={item.title} />
+                                <img src={item.image} alt={item.title} />
                             </Link>
                             <h4>{item.title}</h4>
                         </GridCard>
@@ -39,7 +44,7 @@ const SearchResult = () => {
                 :
                 <Error msg={'No Data Found'} />
             }
-        </>
+        </motion.div>
     )
 }
 

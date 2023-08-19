@@ -1,5 +1,5 @@
 import { FaPizzaSlice, FaHamburger } from 'react-icons/fa';
-import { GiNoodles, GiChopsticks } from 'react-icons/Gi'
+import { GiNoodles, GiChopsticks } from 'react-icons/gi'
 import { List } from './styled-components/styledComps';
 import {NavLink } from 'react-router-dom'
 

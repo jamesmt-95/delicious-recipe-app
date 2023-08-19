@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
-import { motion } from 'framer-motion'
 import { Link, useParams } from 'react-router-dom';
 import { Grid, GridCard } from '../components/styled-components/styledComps';
 import Error from './Error';
+import { motion } from 'framer-motion';
 
 //Link from react-router-dom, to view description
 
@@ -26,7 +26,11 @@ const Cuisine = () => {
     }
 
     return (
-        <>
+        <motion.div
+            initial={{ opacity: 0, scale: 0.98 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.59 }}
+            exit={{ opacity: 0 }}>
             {cuisine ?
                 <Grid>
                     {cuisine.map((item) => (
@@ -41,7 +45,7 @@ const Cuisine = () => {
                 :
                 <Error msg={'No Data Found'} />
             }
-        </>
+        </motion.div>
     )
 }
 

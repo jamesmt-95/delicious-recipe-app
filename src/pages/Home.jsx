@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 // import data from '../sample-data/sampleRecipesData'
 import Popular from "../components/Popular"
 import Veggie from "../components/Veggie"
+import { motion } from "framer-motion"
 import './Home.css'
 
 const Home = () => {
@@ -59,13 +60,18 @@ const Home = () => {
     };
 
     return (
-        <div className="home">
-            <Popular popular={popular} />
-            <Veggie veggie={veggies} />
-        </div>
+            <motion.div
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.6 }}
+                exit={{ opacity: 0 }}
+            >
+                <div className="home">
+                    <Popular popular={popular} />
+                    <Veggie veggie={veggies} />
+                </div>
+            </motion.div>
     )
-
-
 }
 
 
