@@ -68,7 +68,7 @@ const List = styled.div`
       box-shadow: 0 3px 10px 0px rgba(0, 0, 0.5, 0.5);
     }
     &:hover {
-      box-shadow: 0 0 10px 0px rgba(0, 0, 0.5, 0.8);
+      box-shadow: 0 0 10px 0px rgba(242, 113, 33, 0.8);
     }
     @media screen and (min-width: 768px) {
       margin: 0 0.7rem;
@@ -111,7 +111,6 @@ const GridCard = styled.div`
 //Components for Search.jsx
 
 const FormStyle = styled.form`
-  margin-top: 1.5rem;
   div {
     position: relative;
     width: 70%;
@@ -135,14 +134,14 @@ const FormStyle = styled.form`
       top: 50%;
       left: 0%;
       transform: translate(100%, -50%);
-      color: #ffffff;
+      color: #f27121;
     }
     svg.close {
       position: absolute;
       top: 50%;
       right: 3%;
       transform: translate(-3%, -50%);
-      color: #ffffff;
+      color: #f27121;
       cursor: pointer;
       transition: 0.3s all;
     }
@@ -191,12 +190,12 @@ const DetailsWrapper = styled.div`
       margin-bottom: 1rem;
     }
   }
-  .recipe-summary{
+  .recipe-summary {
     padding: 2rem 0;
-    p{
+    p {
       line-height: 1.4rem;
     }
-    h4{
+    h4 {
       font-weight: 600;
       color: #000000;
       text-decoration: underline;
@@ -217,12 +216,11 @@ const DetailsWrapper = styled.div`
     .recipe-main {
       width: 30%;
     }
-    .recipe-summary{
-      p{
+    .recipe-summary {
+      p {
         padding-right: 2rem;
         margin-bottom: 1rem;
       }
-      
     }
   }
 `;
@@ -263,9 +261,31 @@ const Info = styled.div`
   }
 `;
 
+//Components for Header.jsx
+
+const HeaderWrapper = styled.header`
+padding: 2rem;
+display: flex;
+justify-content: center;
+align-items: center;
+  a {
+    text-decoration: none;
+    font-size: 2.5rem;
+    span {
+      font-weight: 400;
+      font-family: "Lobster Two", cursive;
+      font-style: italic;
+    }
+  }
+  @media screen and (min-width: 768px) {
+    justify-content: flex-start;
+  }
+`;
+
 export { Wrapper, Card, Gradient };
 export { List };
 export { Grid, GridCard };
 export { FormStyle };
 export { ErrorCard };
 export { DetailsWrapper, Button, Info };
+export { HeaderWrapper };

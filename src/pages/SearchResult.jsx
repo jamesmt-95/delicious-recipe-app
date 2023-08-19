@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types'
 import Error from './Error';
 import { Grid, GridCard } from '../components/styled-components/styledComps';
 import { useEffect, useState } from 'react';
