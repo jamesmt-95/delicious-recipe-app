@@ -45,7 +45,7 @@ const Home = () => {
             }`
         );
         const data = await res.json();
-        localStorage.setItem("popular", JSON.stringify(data.recipes))
+        // localStorage.setItem("popular", JSON.stringify(data.recipes))
         setPopular(data.recipes);
     };
 
@@ -73,7 +73,7 @@ const Home = () => {
             }`
         );
         const data = await res.json();
-        localStorage.setItem('veggies', JSON.stringify(data.recipes))
+        // localStorage.setItem('veggies', JSON.stringify(data.recipes))
         setVeggies(data.recipes);
 
     };
