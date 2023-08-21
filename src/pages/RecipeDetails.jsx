@@ -18,25 +18,25 @@ const RecipeDetails = () => {
 
     const getRecipeDetails = async (id) => {
         //using localStorage
-        const getRecipesDetails = localStorage.getItem("recipesDetails");
-        if (getRecipeDetails) {
-            console.log(getRecipesDetails);
-            setRecipeDetails(JSON.parse(getRecipesDetails));
-        } else {
-            const res = await fetch(
-                `https://api.spoonacular.com/recipes/${id}/information?apiKey=${import.meta.env.VITE_API_KEY
-                }`
-            );
-            const data = await res.json();
-            // setRecipeDetails(data) //this is not in an array
-            localStorage.setItem("recipesDetails", JSON.stringify(data));
-            setRecipeDetails(JSON.parse(getRecipesDetails));
-        }
+        // const getRecipesDetails = localStorage.getItem("recipesDetails");
+        // if (getRecipeDetails) {
+        //     console.log(getRecipesDetails);
+        //     setRecipeDetails(JSON.parse(getRecipesDetails));
+        // } else {
+        //     const res = await fetch(
+        //         `https://api.spoonacular.com/recipes/${id}/information?apiKey=${import.meta.env.VITE_API_KEY
+        //         }`
+        //     );
+        //     const data = await res.json();
+        //     // setRecipeDetails(data) //this is not in an array
+        //     localStorage.setItem("recipesDetails", JSON.stringify(data));
+        //     setRecipeDetails(JSON.parse(getRecipesDetails));
+        // }
 
         //using fetch
-        // const res = await fetch(`https://api.spoonacular.com/recipes/${id}/information?apiKey=${import.meta.env.VITE_API_KEY}`);
-        // const data = await res.json();
-        // setRecipeDetails(data)
+        const res = await fetch(`https://api.spoonacular.com/recipes/${id}/information?apiKey=${import.meta.env.VITE_API_KEY}`);
+        const data = await res.json();
+        setRecipeDetails(data)
     };
 
     return (
