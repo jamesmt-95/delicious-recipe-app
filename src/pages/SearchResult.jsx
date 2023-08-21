@@ -21,7 +21,8 @@ const SearchResult = () => {
         );
         const data = await res.json()
         setSearchResult(data.results)
-        // console.log(data.results)
+        console.log(data.results)
+        console.log(searchResult)
     }
 
     return (
@@ -30,7 +31,8 @@ const SearchResult = () => {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.59 }}
             exit={{ opacity: 0 }}>
-            {searchResult ?
+            {searchResult.length > 0 ?
+            
                 <Grid>
                     {searchResult.map((item) => (
                         <GridCard key={item.id}>
